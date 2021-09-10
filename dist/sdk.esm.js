@@ -12,12 +12,53 @@ import { getNetwork } from '@ethersproject/networks';
 import { getDefaultProvider } from '@ethersproject/providers';
 import IPancakePair from '@wagyu-swap-libs/wagyu-swap-core/build/IPancakePair.json';
 
+var addresses = {
+	"106": {
+	Multicall: "0x586378554489Cd2C7F481384479FeB2F243B340F",
+	CakeToken: "0x3E388180256E86fbA4A7ff159E9bC927955e7ef5",
+	WVLX: "0x1746150ef72E3b21A9A991fDdE94Ee67DB2A307F",
+	VETHER: "0x78f5119FF976956aaC920CD35328C31c844F36a4",
+	VUSDT: "0x5931073FE357618339e89913ef4b8a006e42f641",
+	VBNB: "0xd6bba6bDFe88677dEB01DF9f43F074299c8C169b",
+	SyrupBar: "0x316A1c3fDc4312a8c02f616bEEA9544698d168B7",
+	Timelock: "0x333738BbE2fC3DF180B156d9eED805F1a974ee4B",
+	MasterChef: "0x82E43Bd297797f5C0C339A59C5756AB127854439",
+	WagyuVault: "0x47f6165a70B7cc5C921535096A95E54FdB1f9390",
+	VaultOwner: "0x2D9Ff3c3D70F653e4d173EcA6d597436872Bf6eb",
+	BnbStaking: "0xaD72FeB64ab260F71ef938dEf51C9b238FC85bbE",
+	SousChefFactory: "0xf9C4950120440EEA25b46072E77F910824200619",
+	LotteryRewardPool: "0xdbed77E6E67C9F16a8B46d1703AA722d5A439796",
+	PancakeFactory: "0x7a3A936774cA96B31091d25D0BD77a6A3B906C3C",
+	PancakeRouter: "0x7C02bE1782665bf434941eeDd590EB8418534a6A",
+	PancakeFactory_Init_Code_Hash: "0x7bde1f13037ef911e48141560d287f633c69de3963649fa4bfbfaf8e7c27dd97"
+},
+	"111": {
+	Multicall: "0x586378554489Cd2C7F481384479FeB2F243B340F",
+	CakeToken: "0x3E388180256E86fbA4A7ff159E9bC927955e7ef5",
+	WVLX: "0x1746150ef72E3b21A9A991fDdE94Ee67DB2A307F",
+	VETHER: "0x78f5119FF976956aaC920CD35328C31c844F36a4",
+	VUSDT: "0x5931073FE357618339e89913ef4b8a006e42f641",
+	VBNB: "0xd6bba6bDFe88677dEB01DF9f43F074299c8C169b",
+	SyrupBar: "0x316A1c3fDc4312a8c02f616bEEA9544698d168B7",
+	Timelock: "0x333738BbE2fC3DF180B156d9eED805F1a974ee4B",
+	MasterChef: "0x82E43Bd297797f5C0C339A59C5756AB127854439",
+	WagyuVault: "0x47f6165a70B7cc5C921535096A95E54FdB1f9390",
+	VaultOwner: "0x2D9Ff3c3D70F653e4d173EcA6d597436872Bf6eb",
+	BnbStaking: "0xaD72FeB64ab260F71ef938dEf51C9b238FC85bbE",
+	SousChefFactory: "0xf9C4950120440EEA25b46072E77F910824200619",
+	LotteryRewardPool: "0xdbed77E6E67C9F16a8B46d1703AA722d5A439796",
+	PancakeFactory: "0x7a3A936774cA96B31091d25D0BD77a6A3B906C3C",
+	PancakeRouter: "0x7C02bE1782665bf434941eeDd590EB8418534a6A",
+	PancakeFactory_Init_Code_Hash: "0x7bde1f13037ef911e48141560d287f633c69de3963649fa4bfbfaf8e7c27dd97"
+}
+};
+
 var _SOLIDITY_TYPE_MAXIMA;
 var ChainId;
 
 (function (ChainId) {
-  ChainId[ChainId["MAINNET"] = 56] = "MAINNET";
-  ChainId[ChainId["TESTNET"] = 97] = "TESTNET";
+  ChainId[ChainId["MAINNET"] = 106] = "MAINNET";
+  ChainId[ChainId["TESTNET"] = 111] = "TESTNET";
 })(ChainId || (ChainId = {}));
 
 var TradeType;
@@ -35,8 +76,9 @@ var Rounding;
   Rounding[Rounding["ROUND_UP"] = 2] = "ROUND_UP";
 })(Rounding || (Rounding = {}));
 
-var FACTORY_ADDRESS = '0xcA143Ce32Fe78f1f7019d7d551a6402fC5350c73';
-var INIT_CODE_HASH = '0x00fb7f630766e6a796048ea87d01acd3068e8ff67d078148a3fa3f4a84f69bd5';
+var DEFAULT_CHAIN_ID = ChainId.TESTNET;
+var FACTORY_ADDRESS = addresses[DEFAULT_CHAIN_ID].PancakeFactory;
+var INIT_CODE_HASH = addresses[DEFAULT_CHAIN_ID].PancakeFactory_Init_Code_Hash;
 var MINIMUM_LIQUIDITY = /*#__PURE__*/JSBI.BigInt(1000); // exports for internal consumption
 
 var ZERO = /*#__PURE__*/JSBI.BigInt(0);
@@ -436,7 +478,7 @@ function currencyEquals(currencyA, currencyB) {
     return currencyA === currencyB;
   }
 }
-var WETH = (_WETH = {}, _WETH[ChainId.MAINNET] = /*#__PURE__*/new Token(ChainId.MAINNET, '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c', 18, 'WBNB', 'Wrapped BNB', 'https://www.binance.org'), _WETH[ChainId.TESTNET] = /*#__PURE__*/new Token(ChainId.TESTNET, '0xaE8E19eFB41e7b96815649A6a60785e1fbA84C1e', 18, 'WBNB', 'Wrapped BNB', 'https://www.binance.org'), _WETH);
+var WETH = (_WETH = {}, _WETH[ChainId.MAINNET] = /*#__PURE__*/new Token(ChainId.MAINNET, addresses[ChainId.MAINNET].WVLX, 18, 'WVLX', 'Wrapped VLX', 'https://www.binance.org'), _WETH[ChainId.TESTNET] = /*#__PURE__*/new Token(ChainId.TESTNET, addresses[ChainId.TESTNET].WVLX, 18, 'WVLX', 'Wrapped VLX', 'https://www.binance.org'), _WETH);
 
 var _toSignificantRoundin, _toFixedRounding;
 var Decimal = /*#__PURE__*/toFormat(_Decimal);
