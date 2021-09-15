@@ -3369,9 +3369,9 @@
     semver "^7.3.2"
     tsutils "^3.17.1"
 
-"@wagyu-swap-libs/wagyu-swap-core@git://github.com/altbee/wagyu-swap-core.git":
+"@wagyu-swap-libs/wagyu-swap-core@git://github.com/wagyuswapapp/wagyu-swap-core.git":
   version "0.1.0"
-  resolved "git://github.com/altbee/wagyu-swap-core.git#9c0e5b1da274bb28b5c108c92ade1b70e74c8bdb"
+  resolved "git://github.com/wagyuswapapp/wagyu-swap-core.git#f819955ce5d0d8a34d1908ca4b59d14466c35ce2"
   dependencies:
     truffle "^5.1.41"
     truffle-flattener "^1.4.4"

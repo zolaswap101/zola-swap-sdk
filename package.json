@@ -22,7 +22,7 @@
     "prepublishOnly": "tsdx build"
   },
   "dependencies": {
-    "@wagyu-swap-libs/wagyu-swap-core": "git://github.com/altbee/wagyu-swap-core.git",
+    "@wagyu-swap-libs/wagyu-swap-core": "git://github.com/wagyuswapapp/wagyu-swap-core.git",
     "big.js": "^5.2.2",
     "decimal.js-light": "^2.5.0",
     "jsbi": "^3.1.1",
