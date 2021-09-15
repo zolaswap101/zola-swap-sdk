@@ -15,7 +15,7 @@ var solidity = require('@ethersproject/solidity');
 var contracts = require('@ethersproject/contracts');
 var networks = require('@ethersproject/networks');
 var providers = require('@ethersproject/providers');
-var IPancakePair = _interopDefault(require('@wagyu-swap-libs/wagyu-swap-core/build/IPancakePair.json'));
+var IPancakePair = _interopDefault(require('@wagyu-swap-libs/wagyu-swap-core/artifacts/IPancakePair.json'));
 
 var addresses = {
 	"106": {
@@ -1538,7 +1538,8 @@ var ERC20 = [
 
 var _TOKEN_DECIMALS_CACHE;
 var TOKEN_DECIMALS_CACHE = (_TOKEN_DECIMALS_CACHE = {}, _TOKEN_DECIMALS_CACHE[exports.ChainId.MAINNET] = {
-  '0xE0B7927c4aF23765Cb51314A0E0521A9645F0E2A': 9
+  '0xE0B7927c4aF23765Cb51314A0E0521A9645F0E2A': 9 // DGD
+
 }, _TOKEN_DECIMALS_CACHE);
 /**
  * Contains methods for constructing instances of pairs and tokens from on-chain data.

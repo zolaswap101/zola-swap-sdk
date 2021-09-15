@@ -10,7 +10,7 @@ import { keccak256, pack } from '@ethersproject/solidity';
 import { Contract } from '@ethersproject/contracts';
 import { getNetwork } from '@ethersproject/networks';
 import { getDefaultProvider } from '@ethersproject/providers';
-import IPancakePair from '@wagyu-swap-libs/wagyu-swap-core/build/IPancakePair.json';
+import IPancakePair from '@wagyu-swap-libs/wagyu-swap-core/artifacts/IPancakePair.json';
 
 var addresses = {
 	"106": {
@@ -1538,7 +1538,8 @@ var ERC20 = [
 
 var _TOKEN_DECIMALS_CACHE;
 var TOKEN_DECIMALS_CACHE = (_TOKEN_DECIMALS_CACHE = {}, _TOKEN_DECIMALS_CACHE[ChainId.MAINNET] = {
-  '0xE0B7927c4aF23765Cb51314A0E0521A9645F0E2A': 9
+  '0xE0B7927c4aF23765Cb51314A0E0521A9645F0E2A': 9 // DGD
+
 }, _TOKEN_DECIMALS_CACHE);
 /**
  * Contains methods for constructing instances of pairs and tokens from on-chain data.
