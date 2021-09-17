@@ -73,7 +73,7 @@ export const WETH = {
     18,
     'WVLX',
     'Wrapped VLX',
-    'https://www.binance.org'
+    'https://www.velas.com/'
   ),
   [ChainId.TESTNET]: new Token(
     ChainId.TESTNET,
@@ -81,6 +81,6 @@ export const WETH = {
     18,
     'WVLX',
     'Wrapped VLX',
-    'https://www.binance.org'
+    'https://www.velas.com/'
   )
 }
