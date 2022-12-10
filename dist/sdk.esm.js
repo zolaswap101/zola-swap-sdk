@@ -13,39 +13,61 @@ import { getDefaultProvider } from '@ethersproject/providers';
 import IPancakePair from '@wagyu-swap-libs/wagyu-swap-core/artifacts/IPancakePair.json';
 
 var addresses = {
-	"106": {
-	owner: "0x4105FAAD40d1e3320989806466dF30eF260E0e42",
-	Multicall2: "0x0747CFe82D3Bee998f634569FE2B0005dF9d8EDE",
-	WAGToken: "0xaBf26902Fd7B624e0db40D31171eA9ddDf078351",
-	WVLX: "0xc579D1f3CF86749E05CD06f7ADe17856c2CE3126",
-	WAGStake: "0xf84fB4a80DD211408699afa9C7A9D236Feff1dD8",
-	Timelock: "0x88396C6c872aA12e9C68bD225c16dEa959361eaD",
-	WAGFarm: "0xa7e8280b8CE4f87dFeFc3d1F2254B5CCD971E852",
-	WagyuVault: "0x0FE86ee7437608F8B8f6185dab1667Ac44e0b59b",
-	VaultOwner: "0x8acDeCCd75552B56A4cB1aBC4842371d7e55699b",
-	WAGStakingFactory: "0x2394632041D76C82c34a6114985C4DDA69594C82",
-	WagyuFactory: "0x69f3212344A38b35844cCe4864C2af9c717F35e3",
-	PancakeFactory_Init_Code_Hash: "0x3f7eace9f1c10ecce400030e19a86fd03c98c3770ce239a9cdef3b33fb40e933",
-	WagyuRouter: "0x3D1c58B6d4501E34DF37Cf0f664A58059a188F00"
+	"137": {
+	owner: "0x0eFf70b92e1aDF79830dEA6f4EEA015CaD4f8483",
+	ZOLAToken: "0x8a226293bC6f697A681B0b29f825c149655fEC2d",
+	WMATIC: "0x0db676216A3cdF226dfD1215DA88B6eF87a0a5B2",
+	USDC: "0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174",
+	AAVE: "0xD6DF932A45C0f255f85145f286eA0b292B21C90B",
+	Multicall2: "0x676810090dEAfaaFB0C198A36400A50Ae40a54d3",
+	ZOLAStake: "0xE7de71b848906f8F007Db6234842473d6CF70283",
+	Timelock: "0x036fBcD109C1a99c30949276B51b9795B1803cAB",
+	ZOLAFarm: "0xa971013b6DF2A0FBe812dE0697ff83C1C8617a87",
+	ZOLAVault: "0xDadee83cfe20B6a829b9C4c5950A9315aa7850A2",
+	VaultOwner: "0x69192Dc9D6cD93b26006ee514a378B4EBBd46f0A",
+	ZOLAStakingFactory: "0xD3Bccd1280cCF52BC2d8Aeab5C03dAd6db5892Ee",
+	LotteryRewardPool: "0x6363187aE29Be45A5C09aa234E7C49C556DdAC05",
+	LAZERMOON: "0xc1CEE919D93DC545D0EA59234C11BE7A536E5108",
+	ZOLAMO: "0x108FD4c11d4a2A9a61ED420Ad21A198A6db5E100",
+	SHIB: "0x6f8a06447Ff6FcF75d803135a7de15CE88C1d4ec",
+	ELON: "0xE0339c80fFDE91F3e20494Df88d4206D86024cdF",
+	ZolaFactory: "0xB4cF380EAdcf29177b08058b6a9d84d4Ab38f00a",
+	PancakeFactory_Init_Code_Hash: "0x595b3c45a8aeae8e48400912670d3bec111fbfb09de7064a212a9fff239ade7a",
+	PancakeERC20: "0xd13c4C6Ce48c1628B7a13720BdC590502A33D288",
+	ZolaSwapLottery: "0xfbaa2CEC6E3bc362275f47Ad4Fece98DBCE3F894",
+	RandomNumberGenerator: "0x9F6C118FfcC5E9d7146A06Bbab4F4713D15A6604",
+	QUICK: "0xB5C064F955D8e7F38fE0460C556a72987494eE17",
+	MATICStaking: "0x44e0134f4257b4751f396e994E74aA901618665b",
+	ZOLAStakingPool: "0xE09B87B2582B100aD213f91bC448C14499a8fDb0",
+	ZolaRouter: "0x2fA91323d88DF750fA8b933e5325C484F5AD730A"
 },
-	"111": {
-	WagyuFactory: "0x524dB42469a1Eb12E7f2b3fEefD9A1f880fC7A4C",
-	PancakeFactory_Init_Code_Hash: "0x3e587aafa830ed6729f6ad31bd15f244a5938c6c3dc057d4fcf2cbc0b1046987",
-	owner: "0x1a642f0E3c3aF545E7AcBD38b07251B3990914F1",
-	Multicall2: "0xacbc13523fE673dCF8bf549AF00B5b4F9D9aBB6e",
-	WAGToken: "0xb830d8213e2c3dD621037703D05A5e594387B6Be",
-	WVLX: "0x071DA4A38460bb14686C1D44d85A7BDad0d6BaC5",
-	TE6: "0x7777b22B5f5A5d1B9ED16bad28E31215273f48B6",
-	TE9: "0x045cf7eF71cC42a5CA1F9C4A330Bf1349295034c",
-	TE12: "0xF8f13cFdA6b41Cc9FC3FB0Ff217B0C449cE4Eb29",
-	TE18: "0x35E0c9830d3d6c273C2A58DB725214afa39bdEf3",
-	WAGStake: "0xd0338acDCaAda6E306B613c437a8Ad7B0118b9a9",
-	Timelock: "0x4C4Bdf7b579494A44a314c5D40dE5B53502F6608",
-	WAGFarm: "0x0FE7711dD2A622725FfB30f378145e1D40127f80",
-	WagyuVault: "0xD3A8555607e18142a1AC634c66C15671E6A56686",
-	VaultOwner: "0xe804675EbBBB3c70Cf66F12d2f7ADB8934F3e5F8",
-	WAGStakingFactory: "0x211E287FD967a51D7A1F8c2Fb7788c6142e084b1",
-	WagyuRouter: "0x5F61a8Ef05470A74E4b17C567ff32d26F7A02646"
+	"80001": {
+	owner: "0x8a06BD16e4Bc5c4f649BE6Bc76a635e3Ba78785f",
+	ZOLAToken: "0x8a226293bC6f697A681B0b29f825c149655fEC2d",
+	WMATIC: "0x0db676216A3cdF226dfD1215DA88B6eF87a0a5B2",
+	USDC: "0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174",
+	AAVE: "0xD6DF932A45C0f255f85145f286eA0b292B21C90B",
+	Multicall2: "0x676810090dEAfaaFB0C198A36400A50Ae40a54d3",
+	ZOLAStake: "0xE7de71b848906f8F007Db6234842473d6CF70283",
+	Timelock: "0x036fBcD109C1a99c30949276B51b9795B1803cAB",
+	ZOLAFarm: "0xa971013b6DF2A0FBe812dE0697ff83C1C8617a87",
+	ZOLAVault: "0xDadee83cfe20B6a829b9C4c5950A9315aa7850A2",
+	VaultOwner: "0x69192Dc9D6cD93b26006ee514a378B4EBBd46f0A",
+	ZOLAStakingFactory: "0xD3Bccd1280cCF52BC2d8Aeab5C03dAd6db5892Ee",
+	LotteryRewardPool: "0x6363187aE29Be45A5C09aa234E7C49C556DdAC05",
+	LAZERMOON: "0xc1CEE919D93DC545D0EA59234C11BE7A536E5108",
+	ZOLAMO: "0x108FD4c11d4a2A9a61ED420Ad21A198A6db5E100",
+	SHIB: "0x6f8a06447Ff6FcF75d803135a7de15CE88C1d4ec",
+	ELON: "0xE0339c80fFDE91F3e20494Df88d4206D86024cdF",
+	ZolaFactory: "0xB4cF380EAdcf29177b08058b6a9d84d4Ab38f00a",
+	PancakeFactory_Init_Code_Hash: "0x595b3c45a8aeae8e48400912670d3bec111fbfb09de7064a212a9fff239ade7a",
+	PancakeERC20: "0xd13c4C6Ce48c1628B7a13720BdC590502A33D288",
+	ZolaSwapLottery: "0xfbaa2CEC6E3bc362275f47Ad4Fece98DBCE3F894",
+	RandomNumberGenerator: "0x9F6C118FfcC5E9d7146A06Bbab4F4713D15A6604",
+	QUICK: "0xB5C064F955D8e7F38fE0460C556a72987494eE17",
+	MATICStaking: "0x44e0134f4257b4751f396e994E74aA901618665b",
+	ZOLAStakingPool: "0xE09B87B2582B100aD213f91bC448C14499a8fDb0",
+	ZolaRouter: "0x2fA91323d88DF750fA8b933e5325C484F5AD730A"
 }
 };
 
@@ -53,8 +75,8 @@ var _SOLIDITY_TYPE_MAXIMA;
 var ChainId;
 
 (function (ChainId) {
-  ChainId[ChainId["MAINNET"] = 106] = "MAINNET";
-  ChainId[ChainId["TESTNET"] = 111] = "TESTNET";
+  ChainId[ChainId["MAINNET"] = 137] = "MAINNET";
+  ChainId[ChainId["TESTNET"] = 80001] = "TESTNET";
 })(ChainId || (ChainId = {}));
 
 var TradeType;
@@ -73,7 +95,7 @@ var Rounding;
 })(Rounding || (Rounding = {}));
 
 var DEFAULT_CHAIN_ID = ChainId.MAINNET;
-var FACTORY_ADDRESS = addresses[DEFAULT_CHAIN_ID].WagyuFactory;
+var FACTORY_ADDRESS = addresses[DEFAULT_CHAIN_ID].ZolaFactory;
 var INIT_CODE_HASH = addresses[DEFAULT_CHAIN_ID].PancakeFactory_Init_Code_Hash;
 var MINIMUM_LIQUIDITY = /*#__PURE__*/JSBI.BigInt(1000); // exports for internal consumption
 
@@ -407,7 +429,7 @@ function Currency(decimals, symbol, name) {
  * The only instance of the base class `Currency`.
  */
 
-Currency.ETHER = /*#__PURE__*/new Currency(18, 'VLX', 'Velas VLX');
+Currency.ETHER = /*#__PURE__*/new Currency(18, 'MATIC', 'Polygon MATIC');
 var ETHER = Currency.ETHER;
 
 var _WETH;
@@ -474,7 +496,7 @@ function currencyEquals(currencyA, currencyB) {
     return currencyA === currencyB;
   }
 }
-var WETH = (_WETH = {}, _WETH[ChainId.MAINNET] = /*#__PURE__*/new Token(ChainId.MAINNET, addresses[ChainId.MAINNET].WVLX, 18, 'WVLX', 'Wrapped VLX', 'https://www.velas.com/'), _WETH[ChainId.TESTNET] = /*#__PURE__*/new Token(ChainId.TESTNET, addresses[ChainId.TESTNET].WVLX, 18, 'WVLX', 'Wrapped VLX', 'https://www.velas.com/'), _WETH);
+var WETH = (_WETH = {}, _WETH[ChainId.MAINNET] = /*#__PURE__*/new Token(ChainId.MAINNET, addresses[ChainId.MAINNET].WMATIC, 18, 'WMATIC', 'Wrapped MATIC', 'https://www.polygon.technology/'), _WETH[ChainId.TESTNET] = /*#__PURE__*/new Token(ChainId.TESTNET, addresses[ChainId.TESTNET].WMATIC, 18, 'WMATIC', 'Wrapped MATIC', 'https://www.polygon.tecnology.com/'), _WETH);
 
 var _toSignificantRoundin, _toFixedRounding;
 var Decimal = /*#__PURE__*/toFormat(_Decimal);
@@ -797,7 +819,7 @@ var Pair = /*#__PURE__*/function () {
   function Pair(tokenAmountA, tokenAmountB) {
     var tokenAmounts = tokenAmountA.token.sortsBefore(tokenAmountB.token) // does safety checks
     ? [tokenAmountA, tokenAmountB] : [tokenAmountB, tokenAmountA];
-    this.liquidityToken = new Token(tokenAmounts[0].token.chainId, Pair.getAddress(tokenAmounts[0].token, tokenAmounts[1].token), 18, 'Wagyu-LP', 'Wagyu LPs');
+    this.liquidityToken = new Token(tokenAmounts[0].token.chainId, Pair.getAddress(tokenAmounts[0].token, tokenAmounts[1].token), 18, 'ZolaSwap-LP', 'ZolaSwap LPs');
     this.tokenAmounts = tokenAmounts;
   }
 
